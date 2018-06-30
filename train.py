@@ -62,8 +62,8 @@ with tf.Session() as sess:
         #         X.append(temp)
             X = utils.index_data(dl[0],dictionary)
             Y = utils.index_data(dl[1],dictionary)
-            feed_dict = {model.X:X[0],                         #构造feed字典  dl[0]是input dl[1]是output
-                         model.Y:X[1],
+            feed_dict = {model.X:X,                         #构造feed字典  dl[0]是input dl[1]是output
+                         model.Y:Y,
                          model.state_tensor:state,
                          model.is_training:1,     # 训练时维珍
                          model.keep_prob:0.8}      #0.8
